@@ -1,0 +1,2 @@
+# CS_4420_Partner_Management_Sys
+This is the repo for CS_4420_project_Partner_management_system
