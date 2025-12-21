@@ -2,7 +2,7 @@ create table partner
 	(partner_id		INT,
 	 partner_name		VARCHAR(150),
 	 partner_type		VARCHAR(30),
-	 partner_status		ENUM('ACTIVE', 'INACTIVE', 'SUSPENDED', 'DISSOLVED'),
+	 partner_status		ENUM('active', 'inactive', 'suspended', 'dissolved'),
 	 partner_website	VARCHAR(255),
 	 sector			VARCHAR(30),
 	 arrangment_frequency	INT,
@@ -22,7 +22,7 @@ create table organization_unit
 	(unit_id		INT,
 	 unit_name		VARCHAR(100),
 	 unit_scope		VARCHAR(50),
-	 status			ENUM('ACTIVE', 'INACTIVE', 'SUSPENDED', 'DISSOLVED'),
+	 status			ENUM('active', 'inactive', 'suspended', 'dissolved'),
 	 established_date	DATE,
 	 primary key (unit_id)
 	);
@@ -98,8 +98,8 @@ create table agreement
 create table agreement_status_history
 	(status_seq_no		INT,
 	 agreement_id 		INT,
-	 previous_status	ENUM(),
-	 current_status		ENUM(),
+	 previous_status	ENUM('draft', 'signed', 'expired', 'terminated'),
+	 current_status		ENUM('draft', 'signed', 'expired', 'terminated'),
 	 status_change_time	DATE,
 	 status_change_note	VARCHAR(255),
 	 primary key (status_seq_no, agreement_id),
@@ -176,7 +176,7 @@ create table contribution
 	(contribution_id		INT,
 	 event_id			INT NULL,
 	 partner_id			INT, 
-	 contribution_type 		VARCHAR(50),
+	 contribution_type 		ENUM('cash', 'in-kind'),
 	 contribution_description	VARCHAR(255),
 	 contribution_estimated_value	DECIMAL(12,2),
 	 contribution_date		DATE,
@@ -203,7 +203,7 @@ create table invoice
 	 invoice_seq		INT,
 	 invoice_issue_date	DATE,
 	 invoice_amount		DECIMAL(12,2),
-	 invoice_status		,
+	 invoice_status		ENUM('paid', 'unpaid', 'cancelled'),
 	 primary key (event_id, invoice_seq),
 	 foreign key (event_id) references collaboration_event (event_id)
 	); 
@@ -213,7 +213,7 @@ create table payment
 	 invoice_seq		INT,
  	 payment_seq		INT,
  	 payment_date		DATE,
-	 payment_method		,
+	 payment_method		ENUM('cash', 'bank transfer', 'e-wallet'),
 	 payment_amount		DECIMAL(12,2),
 	 primary key (event_id, invoice_seq, payment_seq),
 	 foreign key (event_id) references collaboration_event (event_id),
