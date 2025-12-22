@@ -2,7 +2,7 @@ create table partner
 	(partner_id		INT,
 	 partner_name		VARCHAR(150),
 	 partner_type		VARCHAR(30),
-	 partner_status		ENUM('active', 'inactive', 'suspended', 'dissolved'),
+	 partner_status		ENUM('prospect', 'active', 'inactive'),
 	 partner_website	VARCHAR(255),
 	 sector			VARCHAR(30),
 	 arrangment_frequency	INT,
@@ -22,7 +22,7 @@ create table organization_unit
 	(unit_id		INT,
 	 unit_name		VARCHAR(100),
 	 unit_scope		VARCHAR(50),
-	 status			ENUM('active', 'inactive', 'suspended', 'dissolved'),
+	 status			ENUM('prospect', 'active', 'inactive'),
 	 established_date	DATE,
 	 primary key (unit_id)
 	);
@@ -67,7 +67,7 @@ create table faculty
 	 foreign key (faculty_id) references organization_unit (unit_id)
 		on delete cascade
 		on update cascade,
-	 foreign key (school_id) references school (school_id),
+	 foreign key (school_id) references school (school_id)
 		on delete cascade
 		on update cascade
 	);
@@ -75,7 +75,7 @@ create table faculty
 create table center
 	(center_id		INT,
 	 center_type		VARCHAR(30),
-	 num_fund_received	DECIMAL(12,2)
+	 num_fund_received	DECIMAL(12,2),
 	 director_name		VARCHAR(150),
 	 start_date 		DATE,
 	 end_date		DATE,
@@ -126,13 +126,13 @@ create table affiliation
 	 affiliation_end_date		DATE,
 	 affiliation_remark		VARCHAR(255),
 	 primary key (affiliation_no, partner_id, contact_id),
-	 foreign key (partner_id) references partner (partner_id),
+	 foreign key (partner_id) references partner (partner_id)
 		on delete cascade
 		on update cascade,
 	 foreign key (unit_id) references organization_unit (unit_id)
 		on delete cascade
 		on update cascade,
-	 foreign key (contact_id) references affiliation_contact (contact_id),
+	 foreign key (contact_id) references affiliation_contact (contact_id)
 	);
 
 create table involve
@@ -160,7 +160,7 @@ create table collaboration_event
 	 event_start_time	DATE,
 	 event_end_time		DATE,
 	 participants_num	INT,
-	 primary key (event-id)
+	 primary key (event_id)
 	);
 
 create table collab_partner
