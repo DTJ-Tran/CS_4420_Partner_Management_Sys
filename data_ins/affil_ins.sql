@@ -1,0 +1,5 @@
+INSERT INTO affiliation VALUES
+(500001,100002,200110,400001,'2020-01-01',NULL,'Main industry partner'),
+(500002,100004,200200,400002,'2021-06-01',NULL,'Research sponsor'),
+(500003,100006,200110,400003,'2022-01-01','2023-12-31','Visiting researcher');
+

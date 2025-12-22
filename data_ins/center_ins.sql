@@ -1,0 +1,3 @@
+INSERT INTO center VALUES
+(200200,'Research',5000000.00,'Dr. Le Minh Son','2018-06-01',NULL);
+
