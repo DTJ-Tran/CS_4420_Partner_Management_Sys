@@ -1,22 +1,4 @@
-create table partner
-	(partner_id		INT,
-	 partner_name		VARCHAR(150),
-	 partner_type		VARCHAR(30),
-	 partner_status		ENUM('prospect', 'active', 'inactive'),
-	 partner_website	VARCHAR(255),
-	 sector			VARCHAR(30),
-	 arrangment_frequency	INT,
-	 primary key (partner_id)
-	);
 
-create table organization
-	(partner_id		INT,
-	 organization_taxcode	VARCHAR(10) NOT NULL,
-	 primary key (partner_id),
-	 foreign key (partner_id) references partner (partner_id)
-		on delete cascade
-		on update cascade
-	);
 	
 create table organization_unit
 	(unit_id		INT,
@@ -55,7 +37,6 @@ create table school
 		on update cascade
 	);
 
- 
 create table faculty
 	(faculty_id		INT,
 	 faculty_code		VARCHAR(10),
@@ -66,9 +47,9 @@ create table faculty
 	 school_id		INT,
 	 primary key (faculty_id),
 	 foreign key (faculty_id) references organization_unit (unit_id)
-		on delete cascade,
+		on delete cascade
 		on update cascade,
-	 foreign key (school_id) references school (school_id),
+	 foreign key (school_id) references school (school_id)
 		on delete cascade
 		on update cascade
 	);
@@ -210,7 +191,7 @@ create table invoice
 	); 
 
 create table payment
-	(event_id			INT,
+	(event_id		INT,
 	 invoice_seq		INT,
  	 payment_seq		INT,
  	 payment_date		DATE,
