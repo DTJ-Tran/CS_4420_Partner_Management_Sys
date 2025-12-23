@@ -55,6 +55,7 @@ create table school
 		on update cascade
 	);
 
+ 
 create table faculty
 	(faculty_id		INT,
 	 faculty_code		VARCHAR(10),
@@ -65,9 +66,9 @@ create table faculty
 	 school_id		INT,
 	 primary key (faculty_id),
 	 foreign key (faculty_id) references organization_unit (unit_id)
-		on delete cascade
+		on delete cascade,
 		on update cascade,
-	 foreign key (school_id) references school (school_id)
+	 foreign key (school_id) references school (school_id),
 		on delete cascade
 		on update cascade
 	);
@@ -209,7 +210,7 @@ create table invoice
 	); 
 
 create table payment
-	(event_id		INT,
+	(event_id			INT,
 	 invoice_seq		INT,
  	 payment_seq		INT,
  	 payment_date		DATE,

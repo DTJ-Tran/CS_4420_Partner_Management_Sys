@@ -8,6 +8,8 @@ CREATE TABLE invoice{
 	invoice_status ENUM('paid', 'unpaid', 'cancelled'),
 	PRIMARY KEY (event_id, invoice_seq),
 	FOREIGN KEY (event_id) REFERENCES collaboration_event (event_id)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE
 }
 
 CREATE TABLE payment{
@@ -19,6 +21,8 @@ CREATE TABLE payment{
 	payment_amount DECIMAL(12,2),
 	PRIMARY KEY (event_id, invoice_seq, payment_seq),
 	FOREIGN KEY (event_id, invoice_seq) REFERENCES invoice (event_id, invoice_seq)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE
 }
 
 COMMIT;

@@ -7,6 +7,10 @@ CREATE TABLE contribution{
 	contribution_estimated_value DECIMAL(12,2),
 	contribution_date DATE,
 	PRIMARY KEY (contribution_id),
-	FOREIGN KEY (event_id) REFERENCES collaboration_event (event_id),
+	FOREIGN KEY (event_id) REFERENCES collaboration_event (event_id)
+		ON DELETE SET NULL
+		ON UPDATE CASCADE,
 	FOREIGN KEY (partner_id) REFERENCES partner (partner_id)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE
 }

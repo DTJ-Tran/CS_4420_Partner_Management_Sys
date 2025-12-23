@@ -17,8 +17,8 @@ CREATE TABLE university{
 	president_name VARCHAR(100),
 	PRIMARY KEY (university_id),
 	FOREIGN KEY (university_id) REFERENCES organization_unit (unit_id)
-		on delete cascade
-		on update cascade
+		ON DELETE CASCADE
+		ON UPDATE CASCADE
 }
 
 CREATE TABLE school{
