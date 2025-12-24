@@ -1,0 +1,3 @@
+faculty_id,faculty_code,head_of_faculty,discipline,tenure_staff_count,research_staff_count,school_id
+100000003,CS01,Tran Duc Anh,Computer Science,80,40,100000002
+100000005,EE01,Pham Tuan,Electrical Engineering,70,30,100000002

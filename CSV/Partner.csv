@@ -1,0 +1,11 @@
+partner_id,partner_name,partner_type,partner_status,partner_website,sector,arrangement_frequency
+200000001,Viettel Group,organization,active,https://viettel.com.vn,telecom,12
+200000002,FPT Corporation,organization,active,https://fpt.com.vn,technology,10
+200000003,VNPT,organization,active,https://vnpt.vn,telecom,8
+200000004,Samsung Vietnam,organization,active,https://samsung.com,electronics,6
+200000005,Intel Vietnam,organization,prospect,https://intel.com,semiconductor,4
+200000006,Nguyen Van A,person,active,,,2
+200000007,Tran Thi B,person,active,,,1
+200000008,Le Quoc C,person,inactive,,,0
+200000009,Pham Minh D,person,active,,,3
+200000010,Hoang Anh E,person,prospect,,,1

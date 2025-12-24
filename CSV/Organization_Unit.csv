@@ -1,0 +1,6 @@
+unit_id,unit_name,unit_scope,status,established_date
+100000001,HUST,university,active,1956-03-06
+100000002,School of IT,school,active,2000-01-01
+100000003,Faculty of CS,faculty,active,2001-01-01
+100000004,AI Research Center,center,active,2018-05-01
+100000005,Faculty of EE,faculty,active,1998-09-01

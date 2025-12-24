@@ -1,0 +1,11 @@
+event_id,event_title,event_type,event_location,event_start_time,event_end_time,participants_num
+300000001,AI Workshop,workshop,Hanoi,2024-03-10,2024-03-12,120
+300000002,Industry Talk,seminar,HUST,2024-04-05,,200
+300000003,Hackathon,competition,HUST,2024-05-01,2024-05-03,150
+300000004,Research Meetup,meeting,Hanoi,2024-06-15,,80
+300000005,Tech Expo,exhibition,HCMC,2024-07-20,2024-07-22,500
+300000006,Startup Pitch,pitch,HUST,2024-08-01,,60
+300000007,AI Training,training,Hanoi,2024-09-10,2024-09-15,40
+300000008,IoT Demo,demo,HUST,2024-10-05,,90
+300000009,Research Review,review,HUST,2024-11-01,,30
+300000010,Annual Summit,conference,Hanoi,2024-12-01,2024-12-03,600
