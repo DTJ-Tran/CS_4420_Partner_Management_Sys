@@ -1,3 +1,5 @@
+START TRANSACTION;
+
 CREATE TABLE feedback{
     event_id INT,
 	feedback_seq_no	INT,
@@ -14,3 +16,5 @@ CREATE TABLE feedback{
 		ON DELETE SET NULL
 		ON UPDATE CASCADE
 }
+
+COMMIT;
