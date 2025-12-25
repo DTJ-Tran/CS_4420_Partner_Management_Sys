@@ -12,8 +12,8 @@ CREATE TABLE contact_point{
 CREATE TABLE affiliation_contact{
     affiliation_no INT,
 	contact_id INT,
-	is_primary BOOL,
-	priority INT,
+	is_primary BOOL DEFAULT FALSE,
+	priority INT DEFAULT 0,
 	PRIMARY KEY (affiliation_no, contact_id), 
 	FOREIGN KEY (affiliation_no) REFERENCES affiliation (affiliation_no)
 		ON DELETE CASCADE

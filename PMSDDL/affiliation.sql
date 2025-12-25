@@ -7,7 +7,7 @@ CREATE TABLE affiliation{
 	affiliation_start_date DATE NOT NULL,
 	affiliation_end_date DATE,
 	affiliation_remark VARCHAR(255),
-	PRIMARY KEY (affiliation_no, partner_id),
+	PRIMARY KEY (affiliation_no, partner_id, unit_id),
 	FOREIGN KEY (partner_id) REFERENCES partner (partner_id)
 		ON DELETE CASCADE
 		ON DELETE CASCADE,

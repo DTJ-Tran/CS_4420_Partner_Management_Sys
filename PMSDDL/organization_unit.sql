@@ -56,7 +56,7 @@ CREATE TABLE faculty{
 
 CREATE TABLE center{
     center_id INT,
-	center_type	VARCHAR(30),
+	center_type	ENUM('research', 'innovation', 'service'),
 	num_fund_received DECIMAL(12,2),
 	director_name VARCHAR(150),
 	start_date DATE,

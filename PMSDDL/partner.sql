@@ -13,7 +13,7 @@ CREATE TABLE partner{
 
 CREATE TABLE organization{
     partner_id INT,
-	organization_taxcode VARCHAR(10) NOT NULL,
+	organization_taxcode VARCHAR(10) DEFAULT 'unknown',
 	PRIMARY KEY (partner_id),
 	FOREIGN KEY (partner_id) REFERENCES partner (partner_id)
 	    ON DELETE CASCADE

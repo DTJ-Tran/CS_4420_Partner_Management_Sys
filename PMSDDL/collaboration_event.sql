@@ -14,8 +14,8 @@ CREATE TABLE collaboration_event{
 CREATE TABLE collab_partner{
     event_id INT,
 	partner_id INT,
-	is_primary BOOL,
-	priority INT,
+	is_primary BOOL DEFAULT FALSE,
+	priority INT DEFAULT 0,
 	PRIMARY KEY (event_id, partner_id),
 	FOREIGN KEY (event_id) REFERENCES collaboration_event (event_id)
 		ON DELETE CASCADE
