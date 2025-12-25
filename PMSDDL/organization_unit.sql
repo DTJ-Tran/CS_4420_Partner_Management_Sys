@@ -1,15 +1,17 @@
+-- RUN organization_unit.sql (2)
+
 START TRANSACTION;
 
-CREATE TABLE organization_unit{
+CREATE TABLE IF NOT EXISTS organization_unit (
     unit_id INT,
 	unit_name VARCHAR(100),
 	unit_scope VARCHAR(50),
 	status ENUM('prospect', 'active', 'inactive'),
 	established_date DATE,
 	PRIMARY KEY (unit_id)
-}
+);
 
-CREATE TABLE university{
+CREATE TABLE IF NOT EXISTS university (
     university_id INT, 
 	legal_name VARCHAR(150),
 	country VARCHAR(50),
@@ -19,9 +21,9 @@ CREATE TABLE university{
 	FOREIGN KEY (university_id) REFERENCES organization_unit (unit_id)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
-}
+);
 
-CREATE TABLE school{
+CREATE TABLE IF NOT EXISTS school (
     school_id INT,
 	academic_focus VARCHAR(100),
 	dean_name VARCHAR(100),
@@ -35,9 +37,9 @@ CREATE TABLE school{
 	FOREIGN KEY (university_id) REFERENCES university (university_id)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
-}
+);
 
-CREATE TABLE faculty{
+CREATE TABLE IF NOT EXISTS faculty (
     faculty_id INT, 
 	faculty_code VARCHAR(10),
 	head_of_faculty	VARCHAR(150),
@@ -52,19 +54,17 @@ CREATE TABLE faculty{
 	FOREIGN KEY (school_id) REFERENCES school (school_id)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
-}
+);
 
-CREATE TABLE center{
+CREATE TABLE IF NOT EXISTS center (
     center_id INT,
 	center_type	ENUM('research', 'innovation', 'service'),
 	num_fund_received DECIMAL(12,2),
 	director_name VARCHAR(150),
-	start_date DATE,
-	end_date DATE,
 	PRIMARY KEY (center_id),
 	FOREIGN KEY (center_id) REFERENCES organization_unit (unit_id)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
-}
+);
 
 COMMIT;

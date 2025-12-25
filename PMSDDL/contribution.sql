@@ -1,4 +1,7 @@
-CREATE TABLE contribution{
+-- RUN contribution.sql (7)
+START TRANSACTION;
+
+CREATE TABLE IF NOT EXISTS contribution (
     contribution_id INT,
 	event_id INT NULL,
 	partner_id INT, 
@@ -13,4 +16,6 @@ CREATE TABLE contribution{
 	FOREIGN KEY (partner_id) REFERENCES partner (partner_id)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
-}
+);
+
+COMMIT;

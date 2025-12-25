@@ -1,6 +1,8 @@
+-- RUN feedback.sql (8)
+
 START TRANSACTION;
 
-CREATE TABLE feedback{
+CREATE TABLE IF NOT EXISTS feedback (
     event_id INT,
 	feedback_seq_no	INT,
 	unit_id INT NULL,
@@ -15,6 +17,6 @@ CREATE TABLE feedback{
 	FOREIGN KEY (unit_id) REFERENCES organization_unit (unit_id)
 		ON DELETE SET NULL
 		ON UPDATE CASCADE
-}
+);
 
 COMMIT;

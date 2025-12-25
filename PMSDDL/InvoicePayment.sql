@@ -1,6 +1,9 @@
+
+-- RUN InvoicePayment.sql (9)
+
 START TRANSACTION;
 
-CREATE TABLE invoice{
+CREATE TABLE IF NOT EXISTS invoice (
     event_id INT,
 	invoice_seq INT,
 	invoice_issue_date DATE,
@@ -10,9 +13,9 @@ CREATE TABLE invoice{
 	FOREIGN KEY (event_id) REFERENCES collaboration_event (event_id)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
-}
+);
 
-CREATE TABLE payment{
+CREATE TABLE IF NOT EXISTS payment (
     event_id INT,
 	invoice_seq INT,
  	payment_seq INT,
@@ -23,6 +26,6 @@ CREATE TABLE payment{
 	FOREIGN KEY (event_id, invoice_seq) REFERENCES invoice (event_id, invoice_seq)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
-}
+);
 
 COMMIT;
